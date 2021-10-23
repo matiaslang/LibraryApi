@@ -68,5 +68,19 @@ namespace LibraryApi.Commands {
                 return new EventResult {OperationSucceeded = false};
             }
         }
+
+        public static async Task<EventResult> ProcessBookDeleteEvent(string id) {
+            try {
+                CreateClient(false);
+                var context = new DynamoDBContext(Client);
+                var result = await DeleteItem(id);
+                return new EventResult {OperationSucceeded = true};
+
+            }
+            catch (Exception e) {
+                Console.WriteLine($"There was an error deleting item from dynamo: {e.Message}");
+                return new EventResult {OperationSucceeded = false};
+            }
+        }
     }
 }

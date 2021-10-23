@@ -72,6 +72,21 @@ namespace LibraryApi.DynamoDB {
             return request;
         }
 
+        public static async Task<DeleteItemResponse> DeleteItem(string id) {
+            LambdaLogger.Log($"Starting to delete item with id: {id}");
+            var client = new AmazonDynamoDBClient();
+            Dictionary<string, AttributeValue> key = new Dictionary<string, AttributeValue>
+            {
+                { "id", new AttributeValue { S = id} },
+            };
+            DeleteItemRequest request = new DeleteItemRequest
+            {
+                TableName = tableName,
+                Key = key
+            };
+
+            return await client.DeleteItemAsync(request);
+        }
 
         public static async Task CreateTableIfNotExisting() {
             try {

@@ -1,5 +1,6 @@
 using System;
 using System.Threading.Tasks;
+using Amazon.Lambda.Core;
 using LibraryApi.Commands;
 using LibraryApi.Models;
 using Microsoft.AspNetCore.Authorization;
@@ -7,7 +8,8 @@ using Microsoft.AspNetCore.Mvc;
 using LibraryApi.Models;
 
 namespace LibraryApi.Controllers {
-    [Authorize]
+    //[Authorize]
+    //todo: Authorization needs to be corrected
     [Route("[controller]")]
     public class BooksController : ControllerBase{
         public BooksController() { }
@@ -29,6 +31,9 @@ namespace LibraryApi.Controllers {
 
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] BookModel book) {
+            LambdaLogger.Log("starting to process post -event of book");
+            LambdaLogger.Log(book.ToString());
+            LambdaLogger.Log(Request.Body.ToString());
             try {
                 var result = await HandleBookEventCommand.ProcessBookPutEvent(book);
                 return result.OperationSucceeded
@@ -40,6 +45,22 @@ namespace LibraryApi.Controllers {
                 return new BadRequestObjectResult(
                     $"There was a problem with updating {book.title}. Error message: {e.Message}");
             }
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteBook(string id) {
+            try {
+                var result = await HandleBookEventCommand.ProcessBookDeleteEvent(id);
+                return result.OperationSucceeded
+                    ? (IActionResult) new OkObjectResult($"{id} was deleted successfully")
+                    : new BadRequestObjectResult(
+                        $"There was an error processing update of {id}. Error message: {result.Exception}");
+            }
+            catch (Exception e) {
+                return new BadRequestObjectResult(
+                    $"There was a problem with updating {id}. Error message: {e.Message}");
+            }
+            
         }
         
         [HttpPost("list")]

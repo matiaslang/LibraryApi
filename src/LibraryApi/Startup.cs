@@ -23,6 +23,7 @@ namespace LibraryApi {
 
         // This method gets called by the runtime. Use this method to add services to the container
         public void ConfigureServices(IServiceCollection services) {
+            
             services.AddControllers();
             
             services.AddAuthentication(options =>
@@ -41,7 +42,11 @@ namespace LibraryApi {
             if (env.IsDevelopment()) {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseCors(builder => builder
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader());   
+            
             app.UseHttpsRedirection();
 
             app.UseRouting();
