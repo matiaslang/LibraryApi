@@ -188,7 +188,7 @@
             "Properties": {
               "Code": {
                 "S3Bucket": "libraryapi-deployment-bucket",
-                "S3Key": "serverless/LibraryApi/default/1635075920939-2021-10-24T11:45:20.939Z/LibraryApi.zip"
+                "S3Key": "serverless/LibraryApi/default/1635094690778-2021-10-24T16:58:10.778Z/LibraryApi.zip"
               },
               "Handler": "LibraryApi::LibraryApi.LambdaEntryPoint::FunctionHandlerAsync",
               "Runtime": "dotnetcore3.1",
@@ -279,7 +279,7 @@
               "LibraryApiLambdaPermissionApiGateway"
             ]
           },
-          "ApiGatewayDeployment1635075918647": {
+          "ApiGatewayDeployment1635094688665": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -483,7 +483,7 @@
           ".env"
         ],
         "deploymentBucket": "libraryapi-deployment-bucket",
-        "artifactDirectoryName": "serverless/LibraryApi/default/1635075920939-2021-10-24T11:45:20.939Z"
+        "artifactDirectoryName": "serverless/LibraryApi/default/1635094690778-2021-10-24T16:58:10.778Z"
       },
       "plugins": {
         "$ref": "$[\"service\"][\"plugins\"]"
@@ -493,7 +493,7 @@
     "isDashboardMonitoringPreconfigured": false
   },
   "package": {
-    "artifactDirectoryName": "serverless/LibraryApi/default/1635075920939-2021-10-24T11:45:20.939Z",
+    "artifactDirectoryName": "serverless/LibraryApi/default/1635094690778-2021-10-24T16:58:10.778Z",
     "artifact": "LibraryApi.zip"
   }
 }

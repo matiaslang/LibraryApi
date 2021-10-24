@@ -32,8 +32,8 @@ namespace LibraryApi {
                 options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
             }).AddJwtBearer(options =>
             {
-                options.Authority = "https://dev-wuhb2z2r.us.auth0.com/";
-                options.Audience = "https://libraryapi.matiaslang.info";
+                options.Authority = "https://dev-ozku5027.us.auth0.com/";
+                options.Audience = "https://library.langmatias.info";
             });
         }
 
