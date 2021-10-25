@@ -1,0 +1,222 @@
+{
+	"info": {
+		"_postman_id": "eb0dd374-4992-4c10-9834-da52a878b507",
+		"name": "Library V.1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Books",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlREMTl0VHZMT0Z4bmhXODVWNVp1ciJ9.eyJpc3MiOiJodHRwczovL2Rldi13dWhiMnoyci51cy5hdXRoMC5jb20vIiwic3ViIjoiQmJRQ2dZTnhmaWNxMWlEamNCUTZGbzFNTlRPN2FiMUZAY2xpZW50cyIsImF1ZCI6Imh0dHBzOi8vbGlicmFyeWFwaS5tYXRpYXNsYW5nLmluZm8iLCJpYXQiOjE2MzQ4MzA5MzgsImV4cCI6MTYzNDgzODEzOCwiYXpwIjoiQmJRQ2dZTnhmaWNxMWlEamNCUTZGbzFNTlRPN2FiMUYiLCJzY29wZSI6ImJvb2tzIiwiZ3R5IjoiY2xpZW50LWNyZWRlbnRpYWxzIn0.gqTBb35_CyrDqhFn8GEI5d6tdFmlmSBhx189QiHioQyIZzbhe6VZYVYawPHP3abC6v5Ld5JOLq-o9kfetGULeoyzjIml-G_ddJrpYnERXc2xK45al5yCs5O2BNDCutbEk5WNqikQp-WKznZHmh4Fg8CCnJGjuaqscScobpLbcVngU3Gy2W04T-l8ekrqkjRGzBrvWtxwHfAGBAV3fGgUdKF8JrZJl8muZg0yaIjDp7k_PuGwym3CxLZ3f1LphZGPwovRoK439aULROmYM2YKPrQsF4sMFOWHpxrRHeblN_nx6y71YtP42_XriLoxfIwxomVwqy5l24vj8JEzFEn_gw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://libraryapi.matiaslang.info/api/books",
+					"protocol": "https",
+					"host": [
+						"libraryapi",
+						"matiaslang",
+						"info"
+					],
+					"path": [
+						"api",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a Book",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlREMTl0VHZMT0Z4bmhXODVWNVp1ciJ9.eyJpc3MiOiJodHRwczovL2Rldi13dWhiMnoyci51cy5hdXRoMC5jb20vIiwic3ViIjoiQmJRQ2dZTnhmaWNxMWlEamNCUTZGbzFNTlRPN2FiMUZAY2xpZW50cyIsImF1ZCI6Imh0dHBzOi8vbGlicmFyeWFwaS5tYXRpYXNsYW5nLmluZm8iLCJpYXQiOjE2MzQ4MzA5MzgsImV4cCI6MTYzNDgzODEzOCwiYXpwIjoiQmJRQ2dZTnhmaWNxMWlEamNCUTZGbzFNTlRPN2FiMUYiLCJzY29wZSI6ImJvb2tzIiwiZ3R5IjoiY2xpZW50LWNyZWRlbnRpYWxzIn0.gqTBb35_CyrDqhFn8GEI5d6tdFmlmSBhx189QiHioQyIZzbhe6VZYVYawPHP3abC6v5Ld5JOLq-o9kfetGULeoyzjIml-G_ddJrpYnERXc2xK45al5yCs5O2BNDCutbEk5WNqikQp-WKznZHmh4Fg8CCnJGjuaqscScobpLbcVngU3Gy2W04T-l8ekrqkjRGzBrvWtxwHfAGBAV3fGgUdKF8JrZJl8muZg0yaIjDp7k_PuGwym3CxLZ3f1LphZGPwovRoK439aULROmYM2YKPrQsF4sMFOWHpxrRHeblN_nx6y71YtP42_XriLoxfIwxomVwqy5l24vj8JEzFEn_gw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://libraryapi.matiaslang.info/api/books/e7360aa0-6dea-4f28-880c-873b427e5a92",
+					"protocol": "https",
+					"host": [
+						"libraryapi",
+						"matiaslang",
+						"info"
+					],
+					"path": [
+						"api",
+						"books",
+						"e7360aa0-6dea-4f28-880c-873b427e5a92"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post single book",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlREMTl0VHZMT0Z4bmhXODVWNVp1ciJ9.eyJpc3MiOiJodHRwczovL2Rldi13dWhiMnoyci51cy5hdXRoMC5jb20vIiwic3ViIjoiQmJRQ2dZTnhmaWNxMWlEamNCUTZGbzFNTlRPN2FiMUZAY2xpZW50cyIsImF1ZCI6Imh0dHBzOi8vbGlicmFyeWFwaS5tYXRpYXNsYW5nLmluZm8iLCJpYXQiOjE2MzQ4Mjk2MDAsImV4cCI6MTYzNDgzNjgwMCwiYXpwIjoiQmJRQ2dZTnhmaWNxMWlEamNCUTZGbzFNTlRPN2FiMUYiLCJzY29wZSI6ImJvb2tzIiwiZ3R5IjoiY2xpZW50LWNyZWRlbnRpYWxzIn0.p5KRAfsmpP4luoe_2_1yk7iNnVZXQTaJzX9LTxd6tkZL393PPWZXMETkqVhH-ZNNXB-H2vbmhNCvaO0YFpnT4jgsawO7YTHJHYQQhvf_70hW4SmBqB8hC5DmNeS5o1n4f072OWn7l2Kzwb3wlM7NradLwUhamXlPEVuTwpDpD0E17l7a8WsNoQtisREC50O-UTsGMYQGyW6Btcdfy2ac7St1bykRNo5hbcwS87hRpUjLdnDGHkcrR2SzdPHqPVOJa1OFJNrGvkNyZIFjy01X69JFpSoyswfcfAuRDlVI_4FZ2ZQXizMpn9gqLlb10cgHVFbtHajq6i0pjXpIEAcNUA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Ville Vallattoman seikkailut 2\",\n    \"author\": \"Mikko mallikas\",\n    \"description\": \"Tämä on villi tarina Villestä, ja hänen vastoinkäymisistään maailman myrskyissä\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://libraryapi.matiaslang.info/api/books",
+					"protocol": "https",
+					"host": [
+						"libraryapi",
+						"matiaslang",
+						"info"
+					],
+					"path": [
+						"api",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post list of books",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Ville\",\n    \"amount\": 32\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/names/single",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"names",
+						"single"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetToken - Library",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "LUQ01kt7BEtuqycYxzkMeYCJ0jstKX9W",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "4vKwWtFTtJ_knDzniWcUCl9Jzjd4IJzu48MyZFZZc87gEb_f23fzLGLZ_o1S5Dtc",
+							"type": "text"
+						},
+						{
+							"key": "audience",
+							"value": "https://library.langmatias.info",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dev-ozku5027.us.auth0.com/oauth/token",
+					"protocol": "https",
+					"host": [
+						"dev-ozku5027",
+						"us",
+						"auth0",
+						"com"
+					],
+					"path": [
+						"oauth",
+						"token"
+					],
+					"query": [
+						{
+							"key": "application/x-www-form-urlencoded",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
