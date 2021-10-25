@@ -12,6 +12,11 @@ using static LibraryApi.DynamoDB.DynamoClient;
 namespace LibraryApi.Commands {
     public class HandleBookEventCommand {
         public static async Task<EventResult> ProcessBookPutEvent(BookModel book) {
+            if (Util.Util.ConfirmNeededValuesArePresent(book) != null)
+                return new EventResult {
+                    OperationSucceeded = false, ExceptionCode = 400,
+                    Exception = $"Missing a property in payload. Please add {Util.Util.ConfirmNeededValuesArePresent(book)}."
+                };
             try {
                 CreateClient(false);
                 await CreateTableIfNotExisting();
@@ -74,8 +79,11 @@ namespace LibraryApi.Commands {
                 CreateClient(false);
                 var context = new DynamoDBContext(Client);
                 var result = await DeleteItem(id);
-                return new EventResult {OperationSucceeded = true};
-
+                if (result.Attributes.Count > 0) {
+                    return new EventResult {OperationSucceeded = true};
+                }
+                return new EventResult {OperationSucceeded = false, Exception = $"No items found based on id {id}", ExceptionCode = 404};
+                
             }
             catch (Exception e) {
                 Console.WriteLine($"There was an error deleting item from dynamo: {e.Message}");

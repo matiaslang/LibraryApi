@@ -25,7 +25,7 @@ namespace LibraryApi {
         public void ConfigureServices(IServiceCollection services) {
             
             services.AddControllers();
-            
+
             services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -42,6 +42,7 @@ namespace LibraryApi {
             if (env.IsDevelopment()) {
                 app.UseDeveloperExceptionPage();
             }
+
             app.UseCors(builder => builder
                 .AllowAnyOrigin()
                 .AllowAnyMethod()

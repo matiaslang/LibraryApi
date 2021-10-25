@@ -6,6 +6,8 @@ using LibraryApi.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using LibraryApi.Models;
+using LibraryApi.Util;
+using Newtonsoft.Json;
 
 namespace LibraryApi.Controllers {
     //[Authorize]
@@ -31,14 +33,11 @@ namespace LibraryApi.Controllers {
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] BookModel book) {
             LambdaLogger.Log("starting to process post -event of book");
-            LambdaLogger.Log(book.ToString());
-            LambdaLogger.Log(Request.Body.ToString());
             try {
                 var result = await HandleBookEventCommand.ProcessBookPutEvent(book);
                 return result.OperationSucceeded
                     ? (IActionResult) new OkObjectResult($"{book.title} was updated successfully")
-                    : new BadRequestObjectResult(
-                        $"There was an error processing update of {book.title}. Error message: {result.Exception}");
+                    : Util.Util.FormatError(result);
             }
             catch (Exception e) {
                 return new BadRequestObjectResult(
@@ -52,8 +51,7 @@ namespace LibraryApi.Controllers {
                 var result = await HandleBookEventCommand.ProcessBookDeleteEvent(id);
                 return result.OperationSucceeded
                     ? (IActionResult) new OkObjectResult($"{id} was deleted successfully")
-                    : new BadRequestObjectResult(
-                        $"There was an error processing update of {id}. Error message: {result.Exception}");
+                    : Util.Util.FormatError(result);
             }
             catch (Exception e) {
                 return new BadRequestObjectResult(

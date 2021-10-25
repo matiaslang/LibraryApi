@@ -82,7 +82,8 @@ namespace LibraryApi.DynamoDB {
             DeleteItemRequest request = new DeleteItemRequest
             {
                 TableName = tableName,
-                Key = key
+                Key = key,
+                ReturnValues = ReturnValue.ALL_OLD
             };
 
             return await client.DeleteItemAsync(request);
