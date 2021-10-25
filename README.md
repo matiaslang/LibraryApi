@@ -25,7 +25,7 @@ note: if you include an id of existing book in the payload, then the book with t
 ### <u>What still needs to be done?</u>
 
 - [ ] Add proper instructions to run this locally
-
   - [ ] Make it easier and more straighforward to do so
+- [ ] Improve testing
 
   
