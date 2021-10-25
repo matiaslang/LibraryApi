@@ -173,17 +173,17 @@
 						},
 						{
 							"key": "client_id",
-							"value": "LUQ01kt7BEtuqycYxzkMeYCJ0jstKX9W",
+							"value": "{{clientid}}",
 							"type": "text"
 						},
 						{
 							"key": "client_secret",
-							"value": "4vKwWtFTtJ_knDzniWcUCl9Jzjd4IJzu48MyZFZZc87gEb_f23fzLGLZ_o1S5Dtc",
+							"value": "{{clientsecret}}",
 							"type": "text"
 						},
 						{
 							"key": "audience",
-							"value": "https://library.langmatias.info",
+							"value": "{{audience}}",
 							"type": "text"
 						}
 					],
