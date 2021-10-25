@@ -52,7 +52,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "https://libraryapi.matiaslang.info/api/books/e7360aa0-6dea-4f28-880c-873b427e5a92",
+					"raw": "https://libraryapi.matiaslang.info/api/books/103ccde4-43b1-4eed-b3b2-e5217d14294b",
 					"protocol": "https",
 					"host": [
 						"libraryapi",
@@ -62,7 +62,7 @@
 					"path": [
 						"api",
 						"books",
-						"e7360aa0-6dea-4f28-880c-873b427e5a92"
+						"103ccde4-43b1-4eed-b3b2-e5217d14294b"
 					]
 				}
 			},
@@ -129,7 +129,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"Ville\",\n    \"amount\": 32\n}",
+					"raw": "[\n    {\n        \"title\": \"Maija Mehiläisen vastoinkäymiset\",\n        \"author\": \"Jussi Juurukassuo\",\n        \"description\": \"Tarina kertoo Maijasta, jolla on huono päivä.\"\n    },\n    {\n        \"title\": \"Jussi Juurukassuo - kirjailija\",\n        \"author\": \"Max Maltillinen\",\n        \"description\": \"Tarina Jussista ja jussin kirjoituksista.\"\n    },\n    {\n        \"title\": \"Keijo Kivi ja kova maailma\",\n        \"author\": \"Sampo Suotuisa\",\n        \"description\": \"Keijo on kivi ja hän kokee vastoinkäymisiä\"\n    },\n    {\n        \"title\": \"Pyöriikö maailma?\",\n        \"author\": \"Tohtori sykerö\",\n        \"description\": \"Tutkimus maapallosta ja sen pyörimisestä\"\n    }\n]",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -137,15 +137,17 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:5000/names/single",
-					"protocol": "http",
+					"raw": "https://libraryapi.matiaslang.info/api/books/list",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"libraryapi",
+						"matiaslang",
+						"info"
 					],
-					"port": "5000",
 					"path": [
-						"names",
-						"single"
+						"api",
+						"books",
+						"list"
 					]
 				}
 			},
